@@ -175,6 +175,7 @@ def meld(paragraphs, fout, schema):
     ATTAATCAAAGTAGGCGGGGCGGCCGTAGATGCTAAGAAAATCGAGTTCGGTCACCTCCC...
 
     mase schema:
+    ;; this alignment is in the 'mase' format
     ;comment line
     T25
     ACTATTGAAAGAAGGGGGTTCCTAGATATCTGCGAGTATAATCGTGCTTGGTCTCCTATC...
@@ -201,6 +202,10 @@ def meld(paragraphs, fout, schema):
     if schema == PHYLIP_SCHEMA:
         s = ' {} {}'.format(name_count, len(out_pairs[0][1]))
         print(s, file=fout)
+
+    # If using the mase schema, write the mase header.
+    if schema == MASE_SCHEMA:
+        print(";; this alignment is in the 'mase' format", file=fout)
 
     # Write sequences.
     for name, nucs in out_pairs:
