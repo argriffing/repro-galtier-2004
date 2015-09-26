@@ -1,14 +1,17 @@
 
 /* all programs */
 
-  OPTIMIZE_LENGTH=1
-  OPTIMIZE_GC=1
-  OPTIMIZE_TITV=1
-  OPTIMIZE_ROOT=1
-  OPTIMIZE_ANC=1
-  OPTIMIZE_GAMMA=1
-  OPTIMIZE_COV=0
-  OPTIMIZE_PI=0
+  /*
+   * 1 is optimized, 0 is not optimized
+   */
+  OPTIMIZE_LENGTH=1		/* branch lengths */
+  OPTIMIZE_GC=0			/* G+C contents */
+  OPTIMIZE_TITV=1		/* transition/transversion ratio */
+  OPTIMIZE_ROOT=1		/* root location */
+  OPTIMIZE_ANC=0		/* ancestral G+C content */
+  OPTIMIZE_GAMMA=1		/* shape of the gamma distribution */
+  OPTIMIZE_COV=1		/* covarion rate */
+  OPTIMIZE_PI=0			/* proportion of covarion sites */
 
   INIT_LENGTH=REDO 		/* KEEP or REDO */
   INIT_GC=CONST			/* CONST or VAR or BALANCED */
@@ -17,7 +20,7 @@
   INIT_ANC=-1.                  /* -1.=automatic */
   INIT_GAMMA=0.3		/* -1.=infinity (constant rate) */
   GAMMA_NBCLASS=4		/* >= 2 */	
-  INIT_COV=-1.			/* -1.=infinity (no covarion) */
+  INIT_COV=0.1			/* -1.=infinity (no covarion) */
   INIT_PI=0.			
 		
   PRECISION=4
