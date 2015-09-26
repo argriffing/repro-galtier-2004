@@ -31,6 +31,7 @@ from __future__ import print_function, division
 from StringIO import StringIO
 import sys
 import argparse
+from itertools import izip_longest
 
 from numpy.testing import assert_equal, assert_
 
@@ -161,6 +162,13 @@ def gen_paragraphs(fin):
     assert_(p is None)
 
 
+def grouper(iterable, n, fillvalue=None):
+    "Collect data into fixed-length chunks or blocks"
+    # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx
+    args = [iter(iterable)] * n
+    return izip_longest(fillvalue=fillvalue, *args)
+
+
 def meld(paragraphs, fout, schema):
     """
     The output will look like the following, not interleaved.
@@ -198,22 +206,20 @@ def meld(paragraphs, fout, schema):
             for i in indices:
                 out_pairs[pair_idx][1].append(seq[i])
 
-    # If using the phylip schema, write the phylip header.
     if schema == PHYLIP_SCHEMA:
         s = ' {} {}'.format(name_count, len(out_pairs[0][1]))
         print(s, file=fout)
+        for name, nucs in out_pairs:
+            print(name, file=fout)
+            print(''.join(nucs), file=fout)
 
-    # If using the mase schema, write the mase header.
     if schema == MASE_SCHEMA:
         print(";; this alignment is in the 'mase' format", file=fout)
-
-    # Write sequences.
-    for name, nucs in out_pairs:
-        # If using the mase schema, write an uniformative comment line.
-        if schema == MASE_SCHEMA:
+        for name, nucs in out_pairs:
             print('; no description', file=fout)
-        print(name, file=fout)
-        print(''.join(nucs), file=fout)
+            print(name, file=fout)
+            for chunk in grouper(nucs, 60, fillvalue=''):
+                print(''.join(chunk), file=fout)
 
 
 def main(args, fin):
