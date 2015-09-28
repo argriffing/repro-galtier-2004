@@ -1,5 +1,5 @@
 
-Links to data and code at Pole BioInformatique Lyonnais
+Links to data and code at P&ocirc;le BioInformatique Lyonnais
 -------------------------------------------------------
 
  * Large subunit ribosomal dna data set
