@@ -37,6 +37,12 @@ $ md5sum nhml3.tar
 
 # Data pre-processing
 
+## 1) Extraction of alignment from html
+
+todo : custom python hack was written, to make 'phylip' and 'mase' alignments
+
+## 2) Rough estimation of tree from alignment
+
 Use the [phyml online form](http://www.atgc-montpellier.fr/phyml/)
 to roughly construct a phylogenetic tree for which the branch length
 units are nucleotide substitution events per site.
@@ -45,6 +51,10 @@ to include only the relevant columns.
 The default phyml settings on the web form are used,
 except that the phylip sequence file format choice is changed from
 'interleaved' to 'sequential' as appropriate.
+
+## 3) Removal of extraneous annotation in the phyml tree output
+
+todo : dendropy was used
 
 
 # nhml analysis
@@ -67,3 +77,13 @@ except that the phylip sequence file format choice is changed from
 ```
 $ /path/to/nhml3/sources/eval_nh galtier2004.mase galtier2004.tree galtier2004.opt
 ```
+
+
+# reimplemented analysis
+
+## inputs
+
+## outputs
+
+## command
+
