@@ -1,7 +1,22 @@
 
-# Table of Contents (github markdown doesn't make this automatically...)
-[Introduction](#introduction)
-[Data and code](#data-and-code)
+<!-- this table of contents is written by hand... -->
+# Repro-Galtier-2004
+ * [Introduction](#introduction)
+ * [Data and code](#data-and-code)
+   - [Data source](#data-source)
+   - [Code source](#code-source)
+ * [Data processing](#data-pre-processing)
+   - [Alignment extraction](#alignment-extraction)
+   - [Tree estimation](#tree-estimation)
+   - [Tree annotation removal](#tree-annotation-removal)
+ * [nhml analysis](#nhml-analysis)
+   - [inputs](#nhml-inputs)
+   - [outputs](#nhml-outputs)
+   - [command](#nhml-command)
+ * [reimplementation analysis](#reimplementation-analysis)
+   - [inputs](#reimplementation-inputs)
+   - [outputs](#reimplementation-outputs)
+   - [command](#reimplementation-command)
 
 
 <a name="introduction"/>
@@ -24,7 +39,8 @@ http://online.liebertpub.com/doi/pdf/10.1089/cmb.2004.11.727
 <a name="data-and-code"/>
 # Links to data and code at P&ocirc;le BioInformatique Lyonnais
 
-## upstream data
+<a name="data-source"/>
+## data source
 The upstream data is a large-subunit ribosomal dna
 [alignment](http://pbil.univ-lyon1.fr/datasets/gcanc/lsu_align.html).
 It is an html file with asterisks indicating 'good' alignment columns.
@@ -33,7 +49,8 @@ $ md5sum lsu_align.html
 31be444022f40d51a1e9625d38d0c579  lsu_align.html
 ```
 
-## upstream code
+<a name="code-source"/>
+## code source
 The C code associated with the publication is available at
 `ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/nhml`.
 This is called nhml (Non-Homogeneous Maximum Likelihood?)
@@ -47,10 +64,12 @@ $ md5sum nhml3.tar
 
 # Data pre-processing
 
+<a name="alignment-extraction"/>
 ## 1) Extraction of alignment from html
 
 todo : custom python hack was written, to make 'phylip' and 'mase' alignments
 
+<a name="tree-estimation"/>
 ## 2) Rough estimation of tree from alignment
 
 Use the [phyml online form](http://www.atgc-montpellier.fr/phyml/)
@@ -62,13 +81,16 @@ The default phyml settings on the web form are used,
 except that the phylip sequence file format choice is changed from
 'interleaved' to 'sequential' as appropriate.
 
+<a name="tree-annotation-removal"/>
 ## 3) Removal of extraneous annotation in the phyml tree output
 
 todo : dendropy was used
 
 
+<a name="nhml-analysis"/>
 # nhml analysis
 
+<a name="nhml-inputs"/>
 ## inputs
  * `galtier2004.mase` (nucleotide alignment in
    [mase](http://pbil.univ-lyon1.fr/help/formats.html) format)
@@ -76,6 +98,7 @@ todo : dendropy was used
    with branch lengths but without any other annotation)
  * `galtier2004.opt` (options specific to the nhml3 software)
 
+<a name="nhml-outputs"/>
 ## outputs
  * `stdout` (parameter estimates and log likelihood)
  * `treefile.eqgc` (reports branch-specific G+C process parameter estimates;
@@ -83,17 +106,22 @@ todo : dendropy was used
  * `treefile.ndgc` (reports conditional G+C proportions per node;
    this output is also ignored)
 
+<a name="nhml-command"/>
 ## command
 ```
 $ /path/to/nhml3/sources/eval_nh galtier2004.mase galtier2004.tree galtier2004.opt
 ```
 
 
-# reimplemented analysis
+<a name="reimplementation-analysis"/>
+# reimplementation analysis
 
+<a name="reimplementation-inputs"/>
 ## inputs
 
+<a name="reimplementation-outputs"/>
 ## outputs
 
+<a name="reimplementation-command"/>
 ## command
 
