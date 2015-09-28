@@ -11,6 +11,7 @@ http://online.liebertpub.com/doi/pdf/10.1089/cmb.2004.11.727
 ```
 
 
+
 # Links to data and code at P&ocirc;le BioInformatique Lyonnais
 
 ## upstream data
@@ -31,4 +32,38 @@ sequence data using a non-homogeneous Markov model of DNA sequence evolution.'
 ```
 $ md5sum nhml3.tar 
 8909fece00f4af6806ae219b2fc9b6a4  nhml3.tar
+```
+
+
+# Data pre-processing
+
+Use the [phyml online form](http://www.atgc-montpellier.fr/phyml/)
+to roughly construct a phylogenetic tree for which the branch length
+units are nucleotide substitution events per site.
+The input file is a phylip alignment which has been pre-processed
+to include only the relevant columns.
+The default phyml settings on the web form are used,
+except that the phylip sequence file format choice is changed from
+'interleaved' to 'sequential' as appropriate.
+
+
+# nhml analysis
+
+## inputs
+ * `galtier2004.mase` (nucleotide alignment in
+   [mase](http://pbil.univ-lyon1.fr/help/formats.html) format)
+ * `galtier2004.tree` (phylogenetic tree in newick format
+   with branch lengths but without any other annotation)
+ * `galtier2004.opt` (options specific to the nhml3 software)
+
+## outputs
+ * `stdout` (parameter estimates and log likelihood)
+ * `treefile.eqgc` (reports branch-specific G+C process parameter estimates;
+   this output is ignored)
+ * `treefile.ndgc` (reports conditional G+C proportions per node;
+   this output is also ignored)
+
+## command
+```
+$ /path/to/nhml3/sources/eval_nh galtier2004.mase galtier2004.tree galtier2004.opt
 ```
