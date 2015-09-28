@@ -1,3 +1,12 @@
+
+# Table of Contents (github markdown doesn't make this automatically...)
+[Introduction](#introduction)
+[Data and code](#data-and-code)
+
+
+<a name="introduction"/>
+# Introduction
+
 This github repo documents an attempt to reproduce parts of
 the results of the following publication:
 
@@ -12,6 +21,7 @@ http://online.liebertpub.com/doi/pdf/10.1089/cmb.2004.11.727
 
 
 
+<a name="data-and-code"/>
 # Links to data and code at P&ocirc;le BioInformatique Lyonnais
 
 ## upstream data
