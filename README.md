@@ -1,8 +1,10 @@
 
 Links to data and code at P&ocirc;le BioInformatique Lyonnais
--------------------------------------------------------
+-------------------------------------------------------------
 
- * Large subunit ribosomal dna
+data
+----
+Large subunit ribosomal dna
 [alignment](http://pbil.univ-lyon1.fr/datasets/gcanc/lsu_align.html).
 This is an html file with asterisks indicating 'good' alignment columns.
 ```
@@ -10,7 +12,9 @@ $ md5sum lsu_align.html
 31be444022f40d51a1e9625d38d0c579  lsu_align.html
 ```
 
- * nhml (Non-Homogeneous Maximum Likelihood?) source code
+code
+----
+nhml (Non-Homogeneous Maximum Likelihood?) source code
 `ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/nhml`
 for 'maximum likelihood phylogenetic inferences from DNA
 sequence data using a non-homogeneous Markov model of DNA sequence evolution.'
