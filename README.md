@@ -2,6 +2,7 @@
 <!-- this table of contents is written by hand... -->
 # Repro-Galtier-2004
  * [Introduction](#introduction)
+ * [Requirements](#requirements)
  * [NHML data and code](#data-and-code)
    - [Data source](#data-source)
    - [Code source](#code-source)
@@ -34,7 +35,18 @@ doi:10.1089/cmb.2004.11.727.
 http://online.liebertpub.com/doi/pdf/10.1089/cmb.2004.11.727
 ```
 
-
+<a name="requirements"/>
+## Requirements
+ * Linux
+ * Python2.7+
+ * numpy
+ * scipy
+ * [phyml](http://www.atgc-montpellier.fr/phyml/)
+   - on github at https://github.com/stephaneguindon/phyml/
+   - or `apt-get install`-able on debian and its variants
+   - GPL licensed
+ * NHML at `ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/nhml`
+   - unclear licensing situation
 
 <a name="data-and-code"/>
 # Links to data and code at P&ocirc;le BioInformatique Lyonnais
