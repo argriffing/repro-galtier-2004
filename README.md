@@ -2,21 +2,21 @@
 <!-- this table of contents is written by hand... -->
 # Repro-Galtier-2004
  * [Introduction](#introduction)
- * [Data and code](#data-and-code)
+ * [NHML data and code](#data-and-code)
    - [Data source](#data-source)
    - [Code source](#code-source)
- * [Data processing](#data-pre-processing)
+ * [Data pre-processing](#data-pre-processing)
    - [Alignment extraction](#alignment-extraction)
    - [Tree estimation](#tree-estimation)
    - [Tree annotation removal](#tree-annotation-removal)
- * [nhml analysis](#nhml-analysis)
-   - [inputs](#nhml-inputs)
-   - [outputs](#nhml-outputs)
-   - [command](#nhml-command)
- * [reimplementation analysis](#reimplementation-analysis)
-   - [inputs](#reimplementation-inputs)
-   - [outputs](#reimplementation-outputs)
-   - [command](#reimplementation-command)
+ * [NHML analysis](#nhml-analysis)
+   - [Inputs](#nhml-inputs)
+   - [Outputs](#nhml-outputs)
+   - [Command](#nhml-command)
+ * [Reimplementation analysis](#reimplementation-analysis)
+   - [Inputs](#reimplementation-inputs)
+   - [Outputs](#reimplementation-outputs)
+   - [Command](#reimplementation-command)
 
 
 <a name="introduction"/>
