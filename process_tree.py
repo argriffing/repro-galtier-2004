@@ -144,12 +144,6 @@ def gen_transitions(g, nt_distn, kappa, alpha, v):
     """
     M, M_rate = get_M_info(nt_distn, kappa)
 
-    # NOTE this section is obsolete because I am trying HKY85 now.
-    # The underlying model is a Jukes-Cantor process with expected rate 1.
-    # So because there are n=4 nucleotides, the underlying
-    # transition rates are each 1/(n-1) = 1/3.
-    #m_rate = 1/3
-
     # Discretize the continuous gamma distribution
     # into g rate categories.
     # The distribution should have shape parameter alpha,
